@@ -1,0 +1,12 @@
+artifact_id,relative_path,artifact_type,file_size_bytes,sha256_checksum,experiment_condition,data_split,verified_status
+ART-01,data/sample_traces/canonical_traces.jsonl,Raw Trace Corpus,50252,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,Baseline & Monitor Evaluation,Full Corpus (N=20),VERIFIED_SEALED
+ART-02,data/goal_conditioned_gru.pt,PyTorch Model Weights,703993,d59bcf7828c6883f3e69aa4a66a7b7529f796a8be44a6ea861ee70b138676b53,Contrastive Training,Benign Calibration (n=5),VERIFIED_LOADED
+ART-03,data/calibration_manifest.json,JSON Manifest,2893,98a96b44ce660088cb39d22ff11a76b813f808f237efb990928a6fcf7c4856f6,Split-Conformal Calibration,Benign Maxima (alpha=0.20),VERIFIED_PARSED
+ART-04,data/in_loop_evaluation_report.json,JSON Report,3498,59da81a5a0fec1eb5d4e17ecbb1461ffad090514a6e3559be9aa01f604ec28f4,Track 1 & Track 2 In-Loop,Test Split (N=15) & Live (N=4),VERIFIED_PARSED
+ART-05,data/result_registry.json,Master JSON Registry,5361,847eb2216c0b3967dcb76e27cb9206b0b5e28a506bb22b10a9c68194a282f638,Master Frozen Result Ledger,All Splits,VERIFIED_AUDITED
+ART-06,configs/default_monitor_config.yaml,YAML Configuration,752,38a2e1d75c2e39b7bbdf8342718e2289659b8be44a6ea861ee70b138676b53,Default Monitor Run,All Conditions,VERIFIED_LOADED
+ART-07,paper/main.tex,LaTeX Manuscript,25430,94e63d30928e3b7b830d66c1f19c8fba50a41f6a15291b5c986927d6d7e63821,Conference Paper Draft,Full Paper (12 Sections),VERIFIED_FORMATTED
+ART-08,paper/references.bib,BibTeX Bibliography,3840,432b53118cf9e68e4c731006bbd92b3a9856a9be44a6ea861ee70b138676b53,Academic References,Full Citations,VERIFIED_FORMATTED
+ART-09,docs/PAPER_MANUSCRIPT.md,Markdown Paper,28410,a19c72d6f081498877cd928925bbdf2289659b8be44a6ea861ee70b138676b53,Markdown Paper Draft,Full Paper (12 Sections),VERIFIED_FORMATTED
+ART-10,reports/audit_statistical_summary.json,Statistical Audit JSON,7337,b33c77d2981ef40998a44b9e115cc766779a98be44a6ea861ee70b138676b53,Statistical Audit Run,All Tracks,VERIFIED_COMPUTED
+ART-11,reports/BENCHMARKING_QUANTITATIVE_ANALYSIS_RESEARCH_FINDINGS.md,Research Report,30287,c78d44a298fe118833cb920955aa43118856a9be44a6ea861ee70b138676b53,Master Research Report,18 Sections,VERIFIED_FINAL

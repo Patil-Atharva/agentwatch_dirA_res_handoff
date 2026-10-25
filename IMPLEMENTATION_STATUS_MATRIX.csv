@@ -1,0 +1,17 @@
+component_id,specification_section,component_name,status,evidence_file,test_file,notes
+COMP-01,Section 14.2,Python 3.11 Virtual Environment,VERIFIED_IMPLEMENTED,pyproject.toml,scripts/verify_environment.py,Isolated .venv with locked dependencies
+COMP-02,Section 16.1,Pydantic v2 Configuration Management,VERIFIED_IMPLEMENTED,src/agentwatch_a/settings.py,tests/unit/test_settings.py,Type-safe settings loader with relative path resolution
+COMP-03,Section 6.1,Canonical Trace Schema with SHA-256 Seals,VERIFIED_IMPLEMENTED,src/agentwatch_a/schemas.py,tests/unit/test_schemas.py,Pydantic v2 schema with cryptographic tamper detection
+COMP-04,Section 7.6,Pre-Execution Causal Boundary Isolation,VERIFIED_IMPLEMENTED,src/agentwatch_a/models/interface.py,tests/unit/test_no_future_leakage.py,Forbids access to future steps or current observation o_t
+COMP-05,Section 8.7,Deterministic Argument Provenance Extractor,VERIFIED_IMPLEMENTED,src/agentwatch_a/provenance.py,tests/unit/test_provenance.py,7-dimensional argument feature extraction
+COMP-06,Section 8.5,Causal Goal-Conditioned GRU Monitor,VERIFIED_IMPLEMENTED,src/agentwatch_a/models/goal_conditioned_gru.py,tests/unit/test_goal_conditioned_monitor.py,GRU recurrence with contrastive cosine metric projection
+COMP-07,Section 8.6,Goal Ablation Mechanism,VERIFIED_IMPLEMENTED,src/agentwatch_a/models/goal_conditioned_gru.py,tests/unit/test_goal_conditioned_monitor.py,Toggles goal embedding to zero to test Hypothesis H2
+COMP-08,Section 9.2,Split-Conformal Calibration on Trajectory Maxima,VERIFIED_IMPLEMENTED,src/agentwatch_a/calibration/conformal.py,tests/unit/test_conformal_and_metrics.py,Order statistic k = ceil((n+1)(1-alpha))
+COMP-09,Section 10.2,Multi-Action Runtime Decision Policy,VERIFIED_IMPLEMENTED,src/agentwatch_a/policy/decision.py,tests/unit/test_conformal_and_metrics.py,Emits ALLOW / FLAG / HOLD / BLOCK decisions
+COMP-10,Section 10.5,PreExecutionMonitorHook In-Loop Interception,VERIFIED_IMPLEMENTED,src/agentwatch_a/policy/hook.py,tests/integration/test_in_loop_intervention.py,Actively halts proposed tool calls before environment execution
+COMP-11,Section 11.1,Priority A Baselines (B1; B2; B3; B4; B6),VERIFIED_IMPLEMENTED,src/agentwatch_a/models/,tests/unit/test_baselines.py,Full baseline comparator suite
+COMP-12,Section 12.1,Pre-Execution Metrics Suite (TPR_pre; FPR; Lead Time),VERIFIED_IMPLEMENTED,src/agentwatch_a/evaluation/metrics.py,tests/unit/test_conformal_and_metrics.py,Enforces t_flag <= t_harm invariant
+COMP-13,Section 7.1,AgentDojo Benchmark Adapter,VERIFIED_IMPLEMENTED,src/agentwatch_a/benchmark/agentdojo_adapter.py,tests/integration/test_agentdojo_smoke.py,Workspace suite (v1; 40 tasks; MIT License)
+COMP-14,Section 16.3,Automated Master Reproduction Pipeline,VERIFIED_IMPLEMENTED,scripts/reproduce_all.py,scripts/reproduce_all.py,7-stage end-to-end pipeline with zero-discrepancy registry audit
+COMP-15,Section 15.3,Academic Paper Manuscript & Conference Package,VERIFIED_IMPLEMENTED,paper/main.tex; dist/,scripts/package_submission_artifact.py,12-section LaTeX draft and anonymized zip archive
+COMP-16,Section 3.2,Multi-Agent Coordination & Agreement Tracking,OUT_OF_SCOPE,AGENTWATCH_DIRECTION_A_SPEC.md (Line 121),None,Explicitly assigned to Direction B team; absent from Direction A

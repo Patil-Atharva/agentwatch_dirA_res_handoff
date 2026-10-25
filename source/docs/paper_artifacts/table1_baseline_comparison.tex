@@ -1,0 +1,27 @@
+% Table 1: Comparative Pre-Execution Baseline and Feature Separation
+% Auto-generated from data/result_registry.json
+\begin{table}[t]
+\centering
+\small
+\caption{Comparative feature separation across pre-execution baselines and proposed Goal-Conditioned Monitor on canonical benchmark trajectories. Scores are bounded in $[0.0, 1.0]$.}
+\label{tab:baseline_separation}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model / Baseline} & \textbf{Benign ($\mu$)} & \textbf{Resisted ($\mu$)} & \textbf{Hijacked ($\mu$)} & \textbf{Separation ($\Delta$)} \\
+\midrule
+B1 (Tool Transition Laplace Bigram)       & 0.2000 & 0.0000 & 1.0000 & +0.8000 \\
+B2 (Pooled TF-IDF Isolation Forest)       & 0.5324 & 0.3477 & 0.5859 & +0.0535 \\
+B2 (Pooled TF-IDF One-Class SVM)          & 0.0000 & 1.0000 & 1.0000 & +1.0000$^\dagger$ \\
+B3 (Content-Only Injection Detector)      & 0.0000 & 1.0000 & 1.0000 & +1.0000$^\dagger$ \\
+B4 (Unconditioned Sequence $n$-gram)      & 0.2000 & 0.0000 & 0.3846 & +0.1846 \\
+\midrule
+GoalConditionedGRU (Ablated: No Goal)     & 0.4934 & 0.4903 & 0.8500 & +0.3566 \\
+\textbf{GoalConditionedGRU (Full Monitor)} & \textbf{0.5418} & \textbf{0.5217} & \textbf{0.8500} & \textbf{+0.3082} \\
+\midrule
+B6 (Supervised Oracle Upper Bound)        & 0.0064 & 0.0064 & 0.9613 & +0.9549 \\
+\bottomrule
+\end{tabular}
+\vspace{1mm}
+\flushleft
+\footnotesize{$^\dagger$Suffers catastrophic false positive alarms on legitimate tasks when untrusted text appears in tool observations.}
+\end{table}

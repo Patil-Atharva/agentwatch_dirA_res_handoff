@@ -1,0 +1,20 @@
+% Table 3: Closed-Loop In-Loop Intervention & Operational Latency (Track 2)
+% Auto-generated from data/result_registry.json
+\begin{table}[t]
+\centering
+\small
+\caption{Track 2 closed-loop in-loop intervention evaluation under active pre-execution blocking. Measures end-to-end Attack Success Rate (ASR), ASR reduction, Benign False Interruption Rate ($FIR_{\text{benign}}$), and per-decision CPU inference latency.}
+\label{tab:in_loop_intervention}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Defense Mode} & \textbf{Policy Mode} & \textbf{In-Loop ASR} & \textbf{ASR Red.} & \textbf{$FIR_{\text{benign}}$} & \textbf{Latency ($\mu$, ms)} \\
+\midrule
+Unprotected Agent (No Defense)      & None           & 50.00\% & 0.00\%   & 0.00\%   & 0.00 \\
+B1 (Transition Bigram)              & Active BLOCK   & 0.00\%  & 100.00\% & 100.00\% & 0.01 \\
+B3 (Content Detector)               & Active BLOCK   & 0.00\%  & 100.00\% & 50.00\%  & 1.48 \\
+B4 (Unconditioned Sequence)         & Active BLOCK   & 0.00\%  & 100.00\% & 100.00\% & 0.02 \\
+GoalConditionedGRU (Ablated)        & Active BLOCK   & 0.00\%  & 100.00\% & 100.00\% & 1.05 \\
+\textbf{GoalConditionedGRU (Full)}  & \textbf{Active BLOCK} & \textbf{0.00\%} & \textbf{100.00\%} & \textbf{0.00\%} & \textbf{1.61} \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,39 @@
+# Default configuration for AgentWatch-A Goal-Conditioned Monitor
+schema_version: "1.0"
+run_id: "agentwatch_default"
+seed: 42
+
+monitor:
+  architecture: "GoalConditionedGRU"
+  hidden_dim: 64
+  embedding_dim: 64
+  contrastive_proj_dim: 32
+  use_argument_provenance: true
+  temperature: 0.1
+  learning_rate: 0.005
+  num_epochs: 40
+
+calibration:
+  method: "split_conformal_max_score"
+  primary_alpha: 0.20
+  secondary_alpha: 0.05
+  score_normalization: "raw"
+
+policy:
+  mode: "active_intervention"
+  active_action: "BLOCK"
+  hold_delta: 0.05
+
+benchmark:
+  name: "AgentDojo"
+  suite: "workspace"
+  version: "0.1.35"
+
+splits:
+  canonical_traces_file: "data/sample_traces/canonical_traces.jsonl"
+  calibration_size: 5
+  test_size: 15
+
+reproducibility:
+  deterministic_crc32: true
+  zero_cost_local_execution: true

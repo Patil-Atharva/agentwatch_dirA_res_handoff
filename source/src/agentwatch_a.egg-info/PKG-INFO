@@ -1,0 +1,69 @@
+Metadata-Version: 2.4
+Name: agentwatch-a
+Version: 0.1.0
+Summary: Black-box, online, pre-execution monitor for detecting indirect prompt-injection hijacks in tool-using LLM agents
+Author: AgentWatch-A Research Team
+Requires-Python: <3.12,>=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: torch>=2.2.0
+Requires-Dist: pydantic>=2.7.0
+Requires-Dist: pyyaml>=6.0.1
+Requires-Dist: rich>=13.7.1
+Requires-Dist: typer>=0.12.0
+Requires-Dist: numpy>=1.26.0
+Requires-Dist: pandas>=2.2.0
+Requires-Dist: scipy>=1.12.0
+Requires-Dist: scikit-learn>=1.4.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=5.0.0; extra == "dev"
+Requires-Dist: ruff>=0.4.0; extra == "dev"
+Provides-Extra: benchmark
+Requires-Dist: agentdojo>=0.1.35; extra == "benchmark"
+
+# AgentWatch-A: Online Pre-Execution Monitor for LLM Agents
+
+AgentWatch-A is an empirical AI safety research project investigating whether a **black-box, online, pre-execution monitor** can detect successful indirect prompt-injection (IPI) hijacks in tool-using LLM agents before a harmful tool call executes, while maintaining an acceptably low false-alarm rate on legitimate tasks.
+
+## Authoritative Specification
+
+The primary source of truth is [`AGENTWATCH_DIRECTION_A_SPEC.md`](AGENTWATCH_DIRECTION_A_SPEC.md). All research designs, threat models, calibration rules, and baseline specifications strictly follow this document.
+
+## Setup Instructions
+
+### Prerequisites
+- Windows 10/11, Linux, or macOS
+- Python 3.11 (tested on Python 3.11.0 64-bit)
+- Git
+
+### 1. Virtual Environment Setup
+
+#### Windows PowerShell:
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip wheel
+```
+
+#### Linux / macOS:
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip wheel
+```
+
+### 2. Install Development Dependencies
+```bash
+python -m pip install -e ".[dev]"
+```
+
+### 3. Verify Environment
+Run the environment verification script:
+```bash
+python scripts/verify_environment.py
+```
+
+### 4. Run Tests
+```bash
+python -m pytest
+```

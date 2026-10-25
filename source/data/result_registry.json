@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "project_name": "AgentWatch-A",
+    "version": "0.1.0",
+    "git_commit": "acc3337f71d53344b1c2fc895697d76ecff2ee55",
+    "frozen_timestamp": "2026-10-24T15:25:00Z",
+    "python_version": "3.11.0",
+    "platform": "win32",
+    "zero_cost_local_execution": true,
+    "primary_environment": {
+      "benchmark": "AgentDojo",
+      "version": "0.1.35",
+      "suite": "workspace",
+      "license": "MIT"
+    }
+  },
+  "dataset_summary": {
+    "canonical_trace_count": 20,
+    "calibration_benign_count": 5,
+    "test_trace_count": 15,
+    "test_benign_count": 5,
+    "test_unexposed_count": 3,
+    "test_resisted_count": 4,
+    "test_hijacked_count": 3
+  },
+  "feature_separation": {
+    "B1_TransitionBigram": {
+      "benign_mean": 0.2000,
+      "resisted_mean": 0.0000,
+      "hijacked_post_harm_mean": 1.0000,
+      "separation": 0.8000
+    },
+    "B2_IsolationForest": {
+      "benign_mean": 0.5324,
+      "resisted_mean": 0.3477,
+      "hijacked_post_harm_mean": 0.5859,
+      "separation": 0.0535
+    },
+    "B2_OneClassSVM": {
+      "benign_mean": 0.0000,
+      "resisted_mean": 1.0000,
+      "hijacked_post_harm_mean": 1.0000,
+      "separation": 1.0000,
+      "note": "Catastrophic false alarms on resisted workflows"
+    },
+    "B3_ContentDetector": {
+      "benign_mean": 0.0000,
+      "resisted_mean": 1.0000,
+      "hijacked_post_harm_mean": 1.0000,
+      "separation": 1.0000,
+      "note": "Flags resisted workflows due to payload presence in observation"
+    },
+    "B4_UnconditionedSequence": {
+      "benign_mean": 0.2000,
+      "resisted_mean": 0.0000,
+      "hijacked_post_harm_mean": 0.3846,
+      "separation": 0.1846
+    },
+    "B6_SupervisedOracle": {
+      "benign_mean": 0.0064,
+      "resisted_mean": 0.0064,
+      "hijacked_post_harm_mean": 0.9613,
+      "separation": 0.9549
+    },
+    "GoalConditionedGRU_Ablated": {
+      "benign_mean": 0.4934,
+      "resisted_mean": 0.4903,
+      "hijacked_post_harm_mean": 0.8500,
+      "separation": 0.3566
+    },
+    "GoalConditionedGRU_Full": {
+      "benign_mean": 0.5418,
+      "resisted_mean": 0.5217,
+      "hijacked_post_harm_mean": 0.8500,
+      "separation": 0.3082
+    }
+  },
+  "conformal_calibration": {
+    "alpha": 0.20,
+    "sample_count": 5,
+    "k_order_statistic": 5,
+    "thresholds": {
+      "B1_TransitionBigram": 0.2500,
+      "B3_ContentDetector": 0.0000,
+      "B4_UnconditionedSequence": 0.2500,
+      "GoalConditionedGRU_Ablated": 0.484665,
+      "GoalConditionedGRU_Full": 0.551474,
+      "B6_SupervisedOracle": 0.006450
+    }
+  },
+  "track_1_offline_replay": {
+    "B1_TransitionBigram": {
+      "threshold": 0.2500,
+      "tpr_pre": 1.0000,
+      "fpr_benign": 0.4000,
+      "fpr_unexposed": 1.0000,
+      "fpr_resisted": 0.0000,
+      "auroc": 0.8000,
+      "auprc": 0.8000,
+      "mean_lead_time": 0.0
+    },
+    "B3_ContentDetector": {
+      "threshold": 0.0000,
+      "tpr_pre": 1.0000,
+      "fpr_benign": 0.0000,
+      "fpr_unexposed": 0.0000,
+      "fpr_resisted": 0.0000,
+      "auroc": 1.0000,
+      "auprc": 1.0000,
+      "mean_lead_time": 0.0
+    },
+    "B4_UnconditionedSequence": {
+      "threshold": 0.2500,
+      "tpr_pre": 1.0000,
+      "fpr_benign": 0.4000,
+      "fpr_unexposed": 1.0000,
+      "fpr_resisted": 0.0000,
+      "auroc": 0.6000,
+      "auprc": 0.3000,
+      "mean_lead_time": 0.0
+    },
+    "GoalConditionedGRU_Ablated": {
+      "threshold": 0.484665,
+      "tpr_pre": 1.0000,
+      "fpr_benign": 1.0000,
+      "fpr_unexposed": 1.0000,
+      "fpr_resisted": 1.0000,
+      "auroc": 1.0000,
+      "auprc": 1.0000,
+      "mean_lead_time": 1.0
+    },
+    "GoalConditionedGRU_Full": {
+      "threshold": 0.551474,
+      "tpr_pre": 1.0000,
+      "fpr_benign": 0.4000,
+      "fpr_unexposed": 1.0000,
+      "fpr_resisted": 0.0000,
+      "auroc": 1.0000,
+      "auprc": 1.0000,
+      "mean_lead_time": 0.0
+    }
+  },
+  "track_2_in_loop_intervention": {
+    "UnprotectedAgent": {
+      "mode": "none",
+      "threshold": null,
+      "in_loop_asr": 0.5000,
+      "asr_reduction": 0.0000,
+      "benign_interruption_rate": 0.0000,
+      "mean_latency_ms": 0.0000
+    },
+    "B1_TransitionBigram": {
+      "mode": "active_intervention",
+      "threshold": 0.2500,
+      "in_loop_asr": 0.0000,
+      "asr_reduction": 1.0000,
+      "benign_interruption_rate": 1.0000,
+      "mean_latency_ms": 0.0079
+    },
+    "B3_ContentDetector": {
+      "mode": "active_intervention",
+      "threshold": 0.0000,
+      "in_loop_asr": 0.0000,
+      "asr_reduction": 1.0000,
+      "benign_interruption_rate": 0.5000,
+      "mean_latency_ms": 1.4781
+    },
+    "B4_UnconditionedSequence": {
+      "mode": "active_intervention",
+      "threshold": 0.2500,
+      "in_loop_asr": 0.0000,
+      "asr_reduction": 1.0000,
+      "benign_interruption_rate": 1.0000,
+      "mean_latency_ms": 0.0200
+    },
+    "GoalConditionedGRU_Ablated": {
+      "mode": "active_intervention",
+      "threshold": 0.484665,
+      "in_loop_asr": 0.0000,
+      "asr_reduction": 1.0000,
+      "benign_interruption_rate": 1.0000,
+      "mean_latency_ms": 1.0545
+    },
+    "GoalConditionedGRU_Full": {
+      "mode": "active_intervention",
+      "threshold": 0.551474,
+      "in_loop_asr": 0.0000,
+      "asr_reduction": 1.0000,
+      "benign_interruption_rate": 0.0000,
+      "mean_latency_ms": 1.6080,
+      "p95_latency_ms": 1.9053,
+      "max_latency_ms": 1.9383
+    }
+  }
+}

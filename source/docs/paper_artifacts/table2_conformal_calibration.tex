@@ -1,0 +1,20 @@
+% Table 2: Conformal Calibration and Pre-Execution Evaluation (Track 1)
+% Auto-generated from data/result_registry.json
+\begin{table}[t]
+\centering
+\small
+\caption{Split-conformal calibration and pre-execution evaluation metrics (Track 1: Offline Prefix Replay) evaluated on held-out test trajectories at target nominal rate $\alpha = 0.20$ ($n=5$ benign calibration units, $k=5$).}
+\label{tab:conformal_eval}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Model} & \textbf{Threshold $\hat{\tau}$} & \textbf{$TPR_{\text{pre}}$} & \textbf{$FPR_{\text{benign}}$} & \textbf{$FPR_{\text{resisted}}$} & \textbf{AUROC} & \textbf{AUPRC} \\
+\midrule
+B1 (Transition Bigram)             & 0.2500 & 100.00\% & 40.00\% & 0.00\% & 0.800 & 0.800 \\
+B3 (Content Detector)              & 0.0000 & 100.00\% & 0.00\%  & 0.00\% & 1.000 & 1.000 \\
+B4 (Unconditioned Sequence)        & 0.2500 & 100.00\% & 40.00\% & 0.00\% & 0.600 & 0.300 \\
+\midrule
+GoalConditionedGRU (Ablated)       & 0.4847 & 100.00\% & 100.00\% & 100.00\% & 1.000 & 1.000 \\
+\textbf{GoalConditionedGRU (Full)} & \textbf{0.5515} & \textbf{100.00\%} & \textbf{40.00\%} & \textbf{0.00\%} & \textbf{1.000} & \textbf{1.000} \\
+\bottomrule
+\end{tabular}
+\end{table}

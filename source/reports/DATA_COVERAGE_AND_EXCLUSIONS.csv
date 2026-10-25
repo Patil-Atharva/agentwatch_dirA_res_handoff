@@ -1,0 +1,9 @@
+dataset_partition,total_planned_traces,completed_traces,failed_traces,excluded_traces,exclusion_reasons,unique_tasks,unique_episodes,unique_seeds,unique_agent_configs,eligible_tpr_pre_units,eligible_fpr_benign_units,eligible_fpr_resisted_units,missing_labels_count,trace_completeness_status
+Calibration Split (Benign Maxima),5,5,0,0,None,5,5,1 (Seed 17),MockDeterministicAssistant v1,0,5,0,0,100% Complete & Sealed
+Held-Out Test Split (Benign Control),5,5,0,0,None,5,5,1 (Seed 17),MockDeterministicAssistant v1,0,5,0,0,100% Complete & Sealed
+Held-Out Test Split (Unexposed Attack),3,3,0,0,None,3,3,1 (Seed 17),MockDeterministicAssistant v1,0,0 (Unexposed),0,0,100% Complete & Sealed
+Held-Out Test Split (Exposed Resisted),4,4,0,0,None,2,4,1 (Seed 17),MockDeterministicAssistant v1,0,0,4,0,100% Complete & Sealed
+Held-Out Test Split (Exposed Hijacked),3,3,0,0,None,2,3,1 (Seed 17),MockDeterministicAssistant v1,3,0,0,0,100% Complete & Sealed
+Track 2 Live Closed-Loop (Benign Tasks),2,2,0,0,None,1 (user_task_0),2,1 (Seed 17),MockDeterministicAssistant v1,0,2 (FIR_benign),0,0,100% Complete
+Track 2 Live Closed-Loop (Attack Tasks),2,2,0,0,None,1 (user_task_0),2,1 (Seed 17),MockDeterministicAssistant v1,2 (In-Loop ASR),0,0,0,100% Complete
+Total Corpus (Canonical JSONL),20,20,0,0,None,10,20,1 (Seed 17),MockDeterministicAssistant v1,3,10,4,0,100% SHA-256 Verified
